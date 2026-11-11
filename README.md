@@ -23,12 +23,12 @@ Stores a collection of monomials using `std::vector<Monom>`.
 - [x] `simplify()` — Combines like terms and removes zero coefficients
 - [x] `sort()` — Sort terms in lexicographical order (highest degrees first)
 - [x] `print()` — Helper method for debugging output
-- [ ] `isFree()` — Checks if there is a constant term
-- [ ] `getMaxDegreeX()` — Finds the highest power of **x** (assuming **y = 0**)
-- [ ] `getCoeffAtMaxX()` — Finds the coefficient of the highest power of **x**
-- [ ] `getMinDegreeX()` — Finds the lowest power of **x**
-- [ ] `divideByX(int n)` — Divides the whole polynomial by **xⁿ**
-- [ ] `divideByY(int n)` — Divides the whole polynomial by **yⁿ**
+- [x] `isFree()` — Checks if there is a constant term
+- [x] `getMaxDegreeX()` — Finds the highest power of **x** (assuming **y = 0**)
+- [x] `getCoeffAtMaxX()` — Finds the coefficient of the highest power of **x** (assuming **y = 0**)
+- [x] `getMinDegreeX()` — Finds the lowest power of **x**
+- [x] `divideByX(int n)` — Divides the whole polynomial by **xⁿ**
+- [x] `divideByY(int n)` — Divides the whole polynomial by **yⁿ**
 - [ ] `subtractMultipleOf(...)` — **CORE METHOD:** Subtracts **other · coeff · xᵐ** from the current polynomial (eliminates highest degree of **x**)
 
 ### 3. Core Algorithm: `calculateMultiplicity(f, g)`
