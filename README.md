@@ -32,15 +32,15 @@ Stores a collection of monomials using `std::vector<Monom>`.
 - [x] `subtractMultipleOf(...)` — **CORE METHOD:** Subtracts **other · coeff · xᵐ** from the current polynomial (eliminates highest degree of **x**)
 
 ### 3. Core Algorithm: `calculateMultiplicity(f, g)`
-- [ ] Check for free terms (return `0` if found)
-- [ ] Implement the main `while` loop until one polynomial is divisible by **y**
-- [ ] Implement the logic to subtract the polynomial with the highest degree of **x**
-- [ ] Implement factoring out **y** and adding `m(f, y)` to the result
+- [x] Check for free terms (return `0` if found)
+- [x] Implement the main `while` loop until one polynomial is divisible by **y**
+- [x] Implement the logic to subtract the polynomial with the highest degree of **x**
+- [x] Implement factoring out **y** and adding `m(f, y)` to the result
 
 ### 4. Function `main`
-- [ ] Take input from the user to build the two polynomials
-- [ ] Call `calculateMultiplicity`
-- [ ] Print the final result
+- [x] Take input from the user to build the two polynomials
+- [x] Call `calculateMultiplicity`
+- [x] Print the final result
 
 ## Technical Notes (Implementation Details)
 *   **Data Types:** Used `double` instead of `int` for coefficients to prevent precision loss during division in the `subtractMultipleOf` step.
