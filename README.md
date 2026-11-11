@@ -4,7 +4,7 @@
 This project is a **C++ refactoring** of an existing Python script. The application implements an algorithm to calculate the local intersection multiplicity of two algebraic curves:
 > **f(x, y) = 0** and **g(x, y) = 0** at the origin **(0, 0)**
 
-The mathematical logic is based on **Lecture 10**: we repeatedly subtract a multiple of one polynomial from the other to eliminate the highest degree terms of **x**, until one of the polynomials is divisible by **y**.
+The mathematical logic is based on [**Lecture 10**](lectures/lect10.pdf): we repeatedly subtract a multiple of one polynomial from the other to eliminate the highest degree terms of **x**, until one of the polynomials is divisible by **y**.
 
 **Project Goal:** Practice C++ Object-Oriented Programming (Classes and Object Lifecycle) by turning a messy script into a clean, readable, and well-structured program.
 
