@@ -29,7 +29,7 @@ Stores a collection of monomials using `std::vector<Monom>`.
 - [x] `getMinDegreeX()` — Finds the lowest power of **x**
 - [x] `divideByX(int n)` — Divides the whole polynomial by **xⁿ**
 - [x] `divideByY(int n)` — Divides the whole polynomial by **yⁿ**
-- [ ] `subtractMultipleOf(...)` — **CORE METHOD:** Subtracts **other · coeff · xᵐ** from the current polynomial (eliminates highest degree of **x**)
+- [x] `subtractMultipleOf(...)` — **CORE METHOD:** Subtracts **other · coeff · xᵐ** from the current polynomial (eliminates highest degree of **x**)
 
 ### 3. Core Algorithm: `calculateMultiplicity(f, g)`
 - [ ] Check for free terms (return `0` if found)

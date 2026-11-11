@@ -6,8 +6,8 @@
 #include <tuple>
 #include <iterator>
 
-
 #define EPSILON 1e-9
+
 
 struct Monom {
     double coeff;
@@ -79,6 +79,8 @@ public:
         return false;
     }
 
+    const std::vector<Monom>& getTerms() const { return terms; }
+
     int getMaxDegreeX() const {
         int max = 0;
         for (const Monom& m: terms) {
@@ -146,12 +148,23 @@ public:
         }
     }
 
+
+    void subtractMultipleOf(const Polynomial& other, int mult_power, double some_coeff) { // вычесть из this многочлен coeff·other·x^mult_power (чтоб убрать лишние x)
+        for (const Monom& m: other.getTerms()) {
+            terms.push_back(Monom(m.coeff * -some_coeff, m.x_power + mult_power, m.y_power));
+        }
+        simplify();
+    }
+
 };
 
 
 int main() {
-    Polynomial p = Polynomial();
-    p.addMonomial(Monom(-1, 2, 3));
-    p.addMonomial(Monom(-15, 10, 3));
-    p.print();
+    Polynomial p1 = Polynomial();
+    p1.addMonomial(Monom(-1, 2, 3));
+    p1.addMonomial(Monom(-15, 10, 3));
+    Polynomial p2 = Polynomial();
+    p2.addMonomial(Monom(-10, 12, 3));
+    p1.subtractMultipleOf(p2, 3, 2.2);
+    p1.print();
 }
