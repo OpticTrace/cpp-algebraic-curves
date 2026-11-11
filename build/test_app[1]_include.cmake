@@ -1,0 +1,5 @@
+if(EXISTS "/home/djeld/projects/cpp-algebraic-curves/build/test_app[1]_tests.cmake")
+  include("/home/djeld/projects/cpp-algebraic-curves/build/test_app[1]_tests.cmake")
+else()
+  add_test(test_app_NOT_BUILT test_app_NOT_BUILT)
+endif()

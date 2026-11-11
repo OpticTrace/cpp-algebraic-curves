@@ -1,0 +1,57 @@
+Start testing: Nov 11 17:04 MSK
+----------------------------------------------------------
+1/2 Testing: MultiplicityTest.BasicCase
+1/2 Test: MultiplicityTest.BasicCase
+Command: "/home/djeld/projects/cpp-algebraic-curves/build/test_app" "--gtest_filter=MultiplicityTest.BasicCase" "--gtest_also_run_disabled_tests"
+Directory: /home/djeld/projects/cpp-algebraic-curves/build
+"MultiplicityTest.BasicCase" start time: Nov 11 17:04 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/djeld/projects/cpp-algebraic-curves/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiplicityTest.BasicCase
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiplicityTest
+[ RUN      ] MultiplicityTest.BasicCase
+[       OK ] MultiplicityTest.BasicCase (0 ms)
+[----------] 1 test from MultiplicityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiplicityTest.BasicCase" end time: Nov 11 17:04 MSK
+"MultiplicityTest.BasicCase" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: MultiplicityTest.AnotherCase
+2/2 Test: MultiplicityTest.AnotherCase
+Command: "/home/djeld/projects/cpp-algebraic-curves/build/test_app" "--gtest_filter=MultiplicityTest.AnotherCase" "--gtest_also_run_disabled_tests"
+Directory: /home/djeld/projects/cpp-algebraic-curves/build
+"MultiplicityTest.AnotherCase" start time: Nov 11 17:04 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/djeld/projects/cpp-algebraic-curves/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiplicityTest.AnotherCase
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiplicityTest
+[ RUN      ] MultiplicityTest.AnotherCase
+[       OK ] MultiplicityTest.AnotherCase (0 ms)
+[----------] 1 test from MultiplicityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiplicityTest.AnotherCase" end time: Nov 11 17:04 MSK
+"MultiplicityTest.AnotherCase" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 11 17:04 MSK

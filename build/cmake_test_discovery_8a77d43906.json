@@ -1,0 +1,22 @@
+{
+  "tests": 2,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "MultiplicityTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "BasicCase",
+          "file": "\/home\/djeld\/projects\/cpp-algebraic-curves\/tests\/MultiplicityTest.cpp",
+          "line": 5
+        },
+        {
+          "name": "AnotherCase",
+          "file": "\/home\/djeld\/projects\/cpp-algebraic-curves\/tests\/MultiplicityTest.cpp",
+          "line": 18
+        }
+      ]
+    }
+  ]
+}

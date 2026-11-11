@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/djeld/projects/cpp-algebraic-curves/build/_deps/googletest-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
