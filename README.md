@@ -55,8 +55,8 @@ The algorithm is a Euclidean-style recursion for polynomials. It relies on the f
 properties of multiplicity:
 
 1. **Trivial (vanishing) case.** $m(f,g)=0$ if $f(0,0)\neq 0$ or $g(0,0)\neq 0$.
-2. **Invariance under adding a multiple.** $m(f,g)=m(f,\,g+a\cdot f)$ for any polynomial $a(x,y)$.
-3. **Additivity in the second argument.** $m(f,\,g\cdot h)=m(f,g)+m(f,h)$.
+2. **Invariance under adding a multiple.** $m(f,g)=m(f\,g+a\cdot f)$ for any polynomial $a(x,y)$.
+3. **Additivity in the second argument.** $m(f\,g\cdot h)=m(f,g)+m(f,h)$.
 4. **Base case.** $m(x,y)=1$.
 
 Together with the symmetry $m(f,g)=m(g,f)$, these properties drive the recursion.
