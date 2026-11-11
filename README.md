@@ -12,16 +12,17 @@ The mathematical logic is based on **Lecture 10**: we repeatedly subtract a mult
 ## Progress Checklist
 
 ### 1. Class `Monom` (Single Term)
-Represents a single term in the form of **c · xᵃ · yᵇ**.
+Represents a single term in the form of **c·xᵃ·yᵇ**.
 - [x] Struct definition and constructor `Monom(coeff, power_x, power_y)`
-- [x] Overload the `<<` operator for easy printing (e.g., `2 · x^2 · y^1`)
+- [x] Overload the `<<` operator for easy printing (e.g., `2·x^2·y^1`)
 
 ### 2. Class `Polynomial`
 Stores a collection of monomials using `std::vector<Monom>`.
 - [x] Class definition and `std::vector<Monom>` attribute
 - [x] `addMonomial(Monom m)` — Adds a monomial to the polynomial
-- [ ] `simplify()` — Combines like terms and removes zero coefficients
-- [ ] `print()` — Helper method for debugging output
+- [x] `simplify()` — Combines like terms and removes zero coefficients
+- [x] `sort()` — Sort terms in lexicographical order (highest degrees first)
+- [x] `print()` — Helper method for debugging output
 - [ ] `isFree()` — Checks if there is a constant term
 - [ ] `getMaxDegreeX()` — Finds the highest power of **x** (assuming **y = 0**)
 - [ ] `getCoeffAtMaxX()` — Finds the coefficient of the highest power of **x**
@@ -40,8 +41,6 @@ Stores a collection of monomials using `std::vector<Monom>`.
 - [ ] Take input from the user to build the two polynomials
 - [ ] Call `calculateMultiplicity`
 - [ ] Print the final result
-
----
 
 ## Technical Notes (Implementation Details)
 *   **Data Types:** Used `double` instead of `int` for coefficients to prevent precision loss during division in the `subtractMultipleOf` step.
