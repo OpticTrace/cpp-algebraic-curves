@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/app.dir/link.d CMakeFiles/app.dir/cpp/main.cpp.o CMakeFiles/app.dir/cpp/Monom.cpp.o CMakeFiles/app.dir/cpp/Polynomial.cpp.o CMakeFiles/app.dir/cpp/Multiplicity.cpp.o -o app

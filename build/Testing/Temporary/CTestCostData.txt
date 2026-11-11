@@ -1,4 +1,0 @@
-MyTests 2 0.0020023
-MultiplicityTest.BasicCase 1 0.003685
-MultiplicityTest.AnotherCase 1 0.0044774
----

@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/test_app.dir/link.d CMakeFiles/test_app.dir/tests/MultiplicityTest.cpp.o CMakeFiles/test_app.dir/cpp/Monom.cpp.o CMakeFiles/test_app.dir/cpp/Polynomial.cpp.o CMakeFiles/test_app.dir/cpp/Multiplicity.cpp.o -o test_app  lib/libgtest_main.a lib/libgtest.a

@@ -1,5 +1,0 @@
-add_test([=[MultiplicityTest.BasicCase]=]  /home/djeld/projects/cpp-algebraic-curves/build/test_app [==[--gtest_filter=MultiplicityTest.BasicCase]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[MultiplicityTest.BasicCase]=]  PROPERTIES DEF_SOURCE_LINE /home/djeld/projects/cpp-algebraic-curves/tests/MultiplicityTest.cpp:5 WORKING_DIRECTORY /home/djeld/projects/cpp-algebraic-curves/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test([=[MultiplicityTest.AnotherCase]=]  /home/djeld/projects/cpp-algebraic-curves/build/test_app [==[--gtest_filter=MultiplicityTest.AnotherCase]==] --gtest_also_run_disabled_tests)
-set_tests_properties([=[MultiplicityTest.AnotherCase]=]  PROPERTIES DEF_SOURCE_LINE /home/djeld/projects/cpp-algebraic-curves/tests/MultiplicityTest.cpp:18 WORKING_DIRECTORY /home/djeld/projects/cpp-algebraic-curves/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set(  test_app_TESTS MultiplicityTest.BasicCase MultiplicityTest.AnotherCase)
