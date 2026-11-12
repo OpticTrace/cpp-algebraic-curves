@@ -1,6 +1,9 @@
 #pragma once
+
 #include <vector>
-#include "Monom.h"
+#include <math/Monom.h>
+
+namespace math {
 
 class Polynomial {
 private:
@@ -12,7 +15,7 @@ public:
     void addMonomial(const Monom& m);
     void simplify();
     void sort();
-    void print();
+    void print() const;
     bool isFree() const;
     const std::vector<Monom>& getTerms() const;
 
@@ -24,5 +27,7 @@ public:
     Polynomial divideByX(int n) const;
     Polynomial divideByY(int n) const;
 
-    void subtractMultipleOf(const Polynomial& other, int mult_power, double some_coeff);
+    void subtractMultipleOf(const Polynomial& other, int mult_power, double multiplier);
 };
+
+}

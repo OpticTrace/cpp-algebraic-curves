@@ -1,4 +1,7 @@
-#include "Multiplicity.h"
+#include <math/Multiplicity.h>
+#include <limits> // для std::numeric_limits
+
+namespace math {
 
 int calculateMultiplicity(Polynomial f, Polynomial g) { 
     int result = 0;
@@ -34,7 +37,7 @@ int calculateMultiplicity(Polynomial f, Polynomial g) {
             // то, что остается в скобках, в нуле не равно нулю.
             // значит, степень вынесенного икса в точности показывает, 
             // насколько сильно кривая касается оси (то есть кратность корня x=0)!
-            int min_x = 999999;
+            int min_x = std::numeric_limits<int>::max();
             for (const Monom& m : g.getTerms()) {
                 // ищем только те члены, где нет y (то есть мы подставили y=0)
                 if (m.y_power == 0 && m.x_power < min_x) {
@@ -42,7 +45,7 @@ int calculateMultiplicity(Polynomial f, Polynomial g) {
                 }
             }
             // если членов без y вообще не нашлось, значит пересечения с осью нет
-            if (min_x == 999999) min_x = 0;
+            if (min_x == std::numeric_limits<int>::max()) min_x = 0;
             
             // прибавляем найденную кратность m(y, g) к общему ответу
             result += min_x; 
@@ -60,13 +63,13 @@ int calculateMultiplicity(Polynomial f, Polynomial g) {
             // нам нужно найти m(f, y) - кратность пересечения оси y=0 с кривой f.
             // для этого смотрим на многочлен f, выкидываем члены с y 
             // и ищем минимальную степень x.
-            int min_x = 999999;
+            int min_x = std::numeric_limits<int>::max();
             for (const Monom& m : f.getTerms()) {
                 if (m.y_power == 0 && m.x_power < min_x) {
                     min_x = m.x_power;
                 }
             }
-            if (min_x == 999999) min_x = 0;
+            if (min_x == std::numeric_limits<int>::max()) min_x = 0;
 
             // прибавляем m(f, y) к общему ответу
             result += min_x; 
@@ -110,4 +113,6 @@ int calculateMultiplicity(Polynomial f, Polynomial g) {
 
     // возвращаем накопленную сумму кратностей (все те очки, что мы собрали на шагах с y)
     return result;
+}
+
 }

@@ -1,25 +1,28 @@
-#include "Polynomial.h"
+#include <math/Polynomial.h>
+#include <iostream>
 #include <map>
 #include <cmath>
 #include <algorithm>
 #include <tuple>
 #include <iterator>
 
-#define EPSILON 1e-9
+namespace math {
 
-Polynomial::Polynomial(std::vector<Monom> t) : terms(t) {}
+constexpr double EPSILON = 1e-9;
+
+Polynomial::Polynomial(std::vector<Monom> t) : terms(std::move(t)) {} // move для оптимизации
 
 void Polynomial::addMonomial(const Monom& m) {
     terms.push_back(m);
 }
 
 void Polynomial::simplify() { // привести пободные
-    std::map<std::pair<int, int>, double> map; // ключ: <степень_x, степень_y>, значение: коэффицент перед этим мономом
+    std::map<std::pair<int, int>, double> coeff_map;
     for (const Monom& m: terms) {
-        map[{m.x_power, m.y_power}] += m.coeff;
+        coeff_map[{m.x_power, m.y_power}] += m.coeff;
     }
     terms.clear();
-    for (const auto& [key, value] : map) {
+    for (const auto& [key, value] : coeff_map) {
         if (std::abs(value) > EPSILON) 
             terms.push_back(Monom(value, key.first, key.second));
     }
@@ -34,21 +37,36 @@ void Polynomial::sort() {
     });
 }
 
-void Polynomial::print() {
-    this->sort();
-    if (terms.begin() != terms.end()) {
-        for (auto it = terms.begin(); it != terms.end(); ++it) {
-            if (std::next(it) == terms.end()) {
-                std::cout << *it << "\n";
-            }
-            else {
-                std::cout << *it << " + ";
-            }
+void Polynomial::print() const {
+    std::vector<Monom> sorted_terms = terms; // сортируем копию а не оригинал
+    std::sort(
+        sorted_terms.begin(),
+        sorted_terms.end(),
+        [] (const Monom& m1, const Monom& m2) {
+            return std::tie(m1.x_power, m1.y_power, m1.coeff) > std::tie(m2.x_power, m2.y_power, m2.coeff);
         }
-    }
-    else {
+    );
+
+    if (sorted_terms.empty()) {
         std::cout << "0\n";
+        return;
     }
+
+    for (auto it = sorted_terms.begin(); it != sorted_terms.end(); ++it) {
+        // костыль для красивого вывода знаков
+        if (it != sorted_terms.begin()) {
+            if (it->coeff > 0) std::cout << " + ";
+            else std::cout << " - ";
+        }
+        
+        // выводим модуль коэффициента чтобы не было двойных минусов
+        Monom temp = *it;
+        if (it != sorted_terms.begin() && temp.coeff < 0) {
+            temp.coeff = -temp.coeff; 
+        }
+        std::cout << temp;
+    }
+    std::cout << "\n";
 }
 
 bool Polynomial::isFree() const { // если есть свободный член (ненулевой) то true
@@ -126,9 +144,11 @@ Polynomial Polynomial::divideByY(int n) const {
     }
 }
 
-void Polynomial::subtractMultipleOf(const Polynomial& other, int mult_power, double some_coeff) { // вычесть из this многочлен coeff·other·x^mult_power (чтоб убрать лишние x)
+void Polynomial::subtractMultipleOf(const Polynomial& other, int mult_power, double multiplier) { // вычесть из this многочлен coeff·other·x^mult_power (чтоб убрать лишние x)
     for (const Monom& m: other.getTerms()) {
-        terms.push_back(Monom(m.coeff * -some_coeff, m.x_power + mult_power, m.y_power));
+        terms.push_back(Monom(m.coeff * -multiplier, m.x_power + mult_power, m.y_power));
     }
     simplify();
+}
+
 }

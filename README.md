@@ -29,7 +29,7 @@ Two lines crossing at the origin. Their gradients (tangents) are different.
 
 > **Graph:** $y=x$ and $y=-x$
 
-![Intersection m=1](images/example1.png)
+![Intersection m=1](docs/images/example1.png)
 
 ### 2. Multiplicity 2: Tangency
 The parabola touches the $x$-axis exactly at its vertex. Both curves have the same tangent
@@ -37,7 +37,7 @@ at this point.
 
 > **Graph:** $y=x^2$ and $y=0$
 
-![Intersection m=2](images/example2.png)
+![Intersection m=2](docs/images/example2.png)
 
 ### 3. Multiplicity 3: Higher-order tangency
 The cubic flattens out completely at the origin: it matches the first and second derivatives
@@ -45,7 +45,7 @@ of the $x$-axis before crossing it.
 
 > **Graph:** $y=x^3$ and $y=0$
 
-![Intersection m=3](images/example3.png)
+![Intersection m=3](docs/images/example3.png)
 
 ---
 
@@ -105,23 +105,35 @@ The project follows modern C++ (C++17) and OOP principles.
 ### Project Structure
 
 ```text
-├── .github/workflows/        # CI/CD pipeline (GitHub Actions)
-├── cpp/
-│   ├── Monom.h/.cpp
-│   ├── Polynomial.h/.cpp
-│   ├── Multiplicity.h/.cpp   # Core algorithm
-│   └── main.cpp
+.
+├── .github/
+│   └── workflows/               # CI/CD pipelines
+├── app/
+│   └── main.cpp                 # Application entry point
+├── include/
+│   └── math/
+│       ├── Monom.h
+│       ├── Multiplicity.h
+│       └── Polynomial.h
+├── src/
+│   ├── Monom.cpp
+│   ├── Multiplicity.cpp         # Implementation of core algorithm
+│   └── Polynomial.cpp
 ├── tests/
-│   └── MultiplicityTest.cpp  # Unit tests (GoogleTest)
-└── CMakeLists.txt            # Build system
+│   └── MultiplicityTest.cpp     # Unit tests (GoogleTest)
+├── docs/                        # Documentation, images, and theory
+│   ├── images/
+│   └── lectures/
+├── .gitignore
+├── CMakeLists.txt
+├── LICENSE
+└── README.md
 ```
 
-### Build and Test
+### Build and Run
 
 ```bash
 cmake -S . -B build
 cmake --build build
-ctest --test-dir build --output-on-failure
+./build/app
 ```
-
-The CLI target name is defined in `CMakeLists.txt`.
